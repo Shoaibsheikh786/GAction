@@ -7,20 +7,21 @@ import org.testng.annotations.Test;
 
 public class BasicCheck {
 	
-	@Test
-	public void method1(){
-		
-		System.out.println("######Hello world this is simple code#######");
-	}
+ @Test
+ public void demo()
+ {
+	 System.out.println("Hello world ##########This is jaa ");
+ }
 	
 	@Test
 	public void test2()
 	{
-		  ChromeOptions options = new ChromeOptions();
-	        options.addArguments("--headless");  // Run Chrome in headless mode (important for GitHub Actions)
-	        options.addArguments("--no-sandbox"); // Bypass OS security model
-	        options.addArguments("--disable-dev-shm-usage"); // Overcome limited resources issues
-
+		boolean isHeadless =Boolean.parseBoolean(System.getProperty("headless", "false"));
+		ChromeOptions options = new ChromeOptions();
+		if (isHeadless) {
+		    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+		}
+  System.out.println(isHeadless);
 	        // Initialize WebDriver with options
 	        WebDriver driver = new ChromeDriver(options);
 
