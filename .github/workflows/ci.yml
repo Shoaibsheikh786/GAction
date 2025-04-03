@@ -21,7 +21,7 @@ jobs:
 
       - name: Upload TestNG Reports
         if: always()  # Runs even if tests fail
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: testng-reports
           path: target/surefire-reports/  # Uploads default TestNG reports
