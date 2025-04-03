@@ -17,4 +17,11 @@ jobs:
           distribution: 'temurin'
 
       - name: Run Tests
-        run: mvn test  # Executes all test cases
+        run: mvn test  # Executes TestNG tests
+
+      - name: Upload TestNG Reports
+        if: always()  # Runs even if tests fail
+        uses: actions/upload-artifact@v3
+        with:
+          name: testng-reports
+          path: target/surefire-reports/  # Uploads default TestNG reports
