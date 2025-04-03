@@ -16,8 +16,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Run Tests
-        run: mvn test  # Executes TestNG tests
+      - name: Run Tests (Headless Mode)
+        run: mvn test -Dheadless=true  # Executes TestNG tests in headless mode
 
       - name: Upload TestNG Reports
         if: always()  # Runs even if tests fail
