@@ -18,9 +18,7 @@ public class BasicCheck {
 	{
 		boolean isHeadless =Boolean.parseBoolean(System.getProperty("headless", "false"));
 		ChromeOptions options = new ChromeOptions();
-		if (isHeadless) {
-		    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
-		}
+	
   System.out.println(isHeadless);
 	        // Initialize WebDriver with options
 	        WebDriver driver = new ChromeDriver(options);
